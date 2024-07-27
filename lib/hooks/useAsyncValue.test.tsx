@@ -1,12 +1,8 @@
-import * as React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
 import '@testing-library/jest-dom';
-import { render, fireEvent, screen, cleanup } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks';
-import { useAsyncValue } from './useAsyncValue';
+import { cleanup, renderHook, act } from '@testing-library/react';
 
-const FAILURE = 'FAILURE';
-const LOADING = 'LOADING';
-const DONE = 'DONE';
+import { useAsyncValue } from './useAsyncValue';
 
 function delay(timeout: number): Promise<void> {
   return new Promise<void>((resolve) => {
@@ -14,22 +10,6 @@ function delay(timeout: number): Promise<void> {
       resolve();
     }, timeout);
   });
-}
-
-function createWrapper<T>(source: () => Promise<T>): React.FunctionComponent<{}> {
-  return () => {
-    const status = useAsyncValue<T>(source, []);
-
-    if (status.state === 'failure') {
-      return <div>{FAILURE}</div>;
-    }
-
-    if (status.state === 'loading') {
-      return <div>{LOADING}</div>;
-    }
-
-    return <div>{status.value}</div>;
-  };
 }
 
 afterEach(cleanup);

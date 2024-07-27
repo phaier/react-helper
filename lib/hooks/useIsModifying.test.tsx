@@ -1,6 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
+
 import '@testing-library/jest-dom';
-import { render, fireEvent, screen, cleanup } from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react';
+
 import { useIsModifying } from './useIsModifying';
 
 const TRUE = 'TRUE';
@@ -85,6 +88,7 @@ describe('useIsModifying', () => {
       expect(screen.queryByText(FALSE)).toBeDefined();
 
       for (let i = 0; i < 100; i += 1) {
+        // eslint-disable-next-line no-await-in-loop
         await delay(100);
 
         rerender(<UseIsModifyingWrapper modified={undefined} timeout={timeout} />);
@@ -99,6 +103,7 @@ describe('useIsModifying', () => {
       expect(screen.queryByText(TRUE)).toBeDefined();
 
       for (let i = 0; i < 100; i += 1) {
+        // eslint-disable-next-line no-await-in-loop
         await delay(100);
 
         rerender(<UseIsModifyingWrapper modified={new Date()} timeout={timeout} />);

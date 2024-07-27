@@ -14,7 +14,7 @@ export function useHandler<T>(
 
   ref.current.handler = handler;
 
-  const callback = useCallback((arg) => {
+  const callback = useCallback((arg: T) => {
     const h = ref.current.handler;
 
     return h(arg);

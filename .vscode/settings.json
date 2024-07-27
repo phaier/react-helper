@@ -45,5 +45,5 @@
   "prettier.enable": true,
   "prettier.configPath": ".prettierrc.json",
   "prettier.useEditorConfig": true,
-  "cSpell.words": ["hankaku", "phaier", "Zenkaku"]
+  "cSpell.words": ["phaier"]
 }

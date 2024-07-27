@@ -1,4 +1,6 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+/* eslint-disable import/no-extraneous-dependencies */
+import { renderHook } from '@testing-library/react';
+
 import { useObservableValue } from './useObservableValue';
 
 describe('useObservableValue', () => {

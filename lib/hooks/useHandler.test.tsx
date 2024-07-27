@@ -1,6 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
+
 import '@testing-library/jest-dom';
-import { render, fireEvent, screen, cleanup, act } from '@testing-library/react';
+import { render, fireEvent, cleanup, act } from '@testing-library/react';
+
 import { useHandler } from './useHandler';
 
 const BUTTON = 'BUTTON';
