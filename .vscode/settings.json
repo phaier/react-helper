@@ -1,0 +1,49 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "*.tgz": true
+  },
+  "search.exclude": {
+    "**/package-lock.json": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "dist/**/*.d.ts": true,
+    "dist/**/*.d.ts.map": true,
+    "dist/**/*.js": true,
+    "dist/**/*.js.map": true
+  },
+  "files.eol": "\n",
+  "eslint.lintTask.options": " . --ext .js,.jsx,.ts,.tsx",
+  "eslint.workingDirectories": ["./"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.enable": true,
+  "prettier.configPath": ".prettierrc.json",
+  "prettier.useEditorConfig": true,
+  "cSpell.words": ["hankaku", "phaier", "Zenkaku"]
+}
