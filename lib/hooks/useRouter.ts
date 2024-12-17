@@ -17,9 +17,7 @@ export namespace RouterState {
 }
 
 export function useRouter(): [RouterState, (state: Partial<RouterState>) => void] {
-  const [router, setState] = useState<RouterState>(() => {
-    return RouterState.get();
-  });
+  const [router, setState] = useState<RouterState>(() => RouterState.get());
 
   const setRouter = useRef<(state: Partial<RouterState>) => void>((state: Partial<RouterState>) => {
     const title = state.title === undefined ? document.title : state.title;

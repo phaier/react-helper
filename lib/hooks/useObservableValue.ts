@@ -5,6 +5,7 @@ export type ObservableValue<T> =
   | ObservableValue.ReceivedValue<T>
   | ObservableValue.FailedValue;
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export namespace ObservableValue {
   export interface WaitingValue {
     state: 'waiting';

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export type AsyncValue<T> = AsyncValue.LoadingValue | AsyncValue.SuccessValue<T> | AsyncValue.FailureValue;
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export namespace AsyncValue {
   export interface LoadingValue {
     state: 'loading';

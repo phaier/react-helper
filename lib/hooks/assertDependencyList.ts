@@ -11,6 +11,7 @@ export function assertDependencyList(deps: DependencyList) {
     console.error(`deps is not Array`);
   }
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const dep of deps) {
     const tod = typeof dep;
 

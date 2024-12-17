@@ -11,9 +11,7 @@ const FALSE = 'FALSE';
 
 function delay(timeout: number): Promise<void> {
   return new Promise<void>((resolve) => {
-    window.setTimeout(() => {
-      resolve();
-    }, timeout);
+    window.setTimeout(resolve, timeout);
   });
 }
 

@@ -1,4 +1,5 @@
 import { DependencyList } from 'react';
+
 import { assertDependencyList } from './assertDependencyList';
 
 describe('assertDependencyList', () => {
