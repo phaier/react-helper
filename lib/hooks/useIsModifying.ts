@@ -13,6 +13,9 @@ export function useIsModifying(modified: Date | undefined, timeout: number): boo
   });
 
   useEffect(() => {
+    let unmounted = false;
+    let outed = false;
+
     if (!m) {
       if (isFresh) {
         setIsFresh(false);
@@ -31,14 +34,22 @@ export function useIsModifying(modified: Date | undefined, timeout: number): boo
       }
 
       timer = window.setTimeout(() => {
+        if (unmounted) {
+          return;
+        }
+
+        outed = true;
         setIsFresh(false);
       }, delay);
     } else if (isFresh) {
       setIsFresh(false);
     }
 
+    // eslint-disable-next-line consistent-return
     return () => {
-      if (timer) {
+      unmounted = true;
+
+      if (!outed) {
         window.clearTimeout(timer);
       }
     };
