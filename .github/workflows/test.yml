@@ -10,17 +10,21 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           registry-url: 'https://registry.npmjs.org'
-          cache: 'npm'
+          cache: 'pnpm'
           cache-dependency-path: |
-            package-lock.json
+            pnpm-lock.yaml
       - name: install
         run: |
-          npm ci
+          pnpm install
       - name: test
         run: |
-          npm test
+          pnpm test
